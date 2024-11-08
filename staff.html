@@ -15,18 +15,21 @@
         <div class="recentOrders">
             <div class="cardHeader">
                 <h2>Crop Details</h2>
-                <a href="#" class="btn">Add New Crop</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cropModal">
+                    Add New Staff
+                </button>
             </div>
 
             <table>
                 <thead>
                 <tr>
-                    <td>Crop Code</td>
-                    <td>Crop Name</td>
-                    <td>Scientific Name</td>
-                    <td>Status</td>
-                    <td>Status</td>
-                    <td>Status</td>
+                    <td>Staff id</td>
+                    <td>Staff Name</td>
+                    <td>Designation</td>
+                    <td>Address</td>
+                    <td>Joined Date</td>
+                    <td>Email</td>
+                    <td>Role</td>
                 </tr>
                 </thead>
 
@@ -92,74 +95,87 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- staff Modal -->
 <div class="modal fade" id="cropModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Add Crop Information</h5>
+                <h5 class="modal-title" id="modalLabel">Add Staff Information</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <!-- Form inside modal -->
                 <form id="cropForm">
                     <div class="form-row">
-                        <!-- Crop Code -->
                         <div class="form-group col-md-6">
-                            <label for="cropCode">Crop Code</label>
-                            <input type="text" class="form-control" id="cropCode" placeholder="Enter crop code" required>
+                            <label for="staffId">Staff ID</label>
+                            <input type="text" class="form-control" id="staffId" placeholder="Enter staff id"
+                                   required>
                         </div>
-                        <!-- Crop Name -->
                         <div class="form-group col-md-6">
-                            <label for="cropName">Crop Name</label>
-                            <input type="text" class="form-control" id="cropName" placeholder="Enter crop name" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <!-- Season -->
-                        <div class="form-group col-md-6">
-                            <label for="season">Season</label>
-                            <input type="text" class="form-control" id="season" placeholder="Enter season" required>
-                        </div>
-                        <!-- Category -->
-                        <div class="form-group col-md-6">
-                            <label for="category">Category</label>
-                            <input type="text" class="form-control" id="category" placeholder="Enter category" required>
+                            <label for="staffName">Name</label>
+                            <input type="text" class="form-control" id="staffName" placeholder="EnterName" required>
                         </div>
                     </div>
 
                     <div class="form-row">
-                        <!-- Scientific Name -->
                         <div class="form-group col-md-6">
-                            <label for="scientificName">Scientific Name</label>
-                            <input type="text" class="form-control" id="scientificName" placeholder="Enter scientific name" required>
+                            <label for="designation">Designation</label>
+                            <input type="text" class="form-control" id="designation" placeholder="Enter designation"
+                                   required>
                         </div>
-                        <!-- Image Upload -->
                         <div class="form-group col-md-6">
-                            <label for="image">Upload Image</label>
-                            <input type="file" class="form-control" id="image" accept="image/*" required>
+                            <label for="gender">Gender</label>
+                            <input type="text" class="form-control" id="gender" placeholder="Enter gender" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="dob">DOB</label>
+                            <input type="date" class="form-control" id="dob" placeholder="Enter date of birth"
+                                   required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="joinedDate">Joined Date</label>
+                            <input type="date" class="form-control" id="joinedDate" placeholder="Enter joined date"
+                                   required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="role">Role</label>
+                            <input type="text" class="form-control" id="role" placeholder="Enter job role" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" placeholder="Enter email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="Enter address"
+                                   required>
                         </div>
                     </div>
 
                     <!-- Submit Button -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save Crop</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-<!-- Bootstrap JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>-->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <script>
     // Handle form submission (this can be adapted for your backend)
     document.getElementById('cropForm').addEventListener('submit', function (event) {
@@ -169,7 +185,7 @@
         // Close the modal
         $('#cropModal').modal('hide');
     });
-</script>
 
+</script>
 </body>
 </html>
