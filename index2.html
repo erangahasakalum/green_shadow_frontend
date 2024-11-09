@@ -34,6 +34,7 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+
             <li class="sidebar-item">
                 <a href="#" class="sidebar-link" id="crops-click">
                     <i class="fas fa-seedling"></i>
@@ -56,6 +57,12 @@
                 <a href="#" class="sidebar-link" id="equipment-click">
                     <i class="fas fa-tools"></i>
                     <span>Equipment</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link" id="staff-click">
+                    <i class="fas fa-users"></i>
+                    <span>Staff</span>
                 </a>
             </li>
             <li class="sidebar-item">
@@ -331,6 +338,260 @@
                                 data-dismiss="modal">No
                         </button>
                         <button type="button" id="confirmVehicleDeleteYes" class="btn btn-danger">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--staff form-->
+<section id="staff-sec">
+    <div class="container mt-4">
+        <!-- Search bar -->
+        <div class="mb-3">
+            <div class="input-group mb-5" style="height: 45px">
+                <input type="text" class="form-control rounded-searchbar" placeholder="Search logs..."
+                       aria-label="Search">
+            </div>
+        </div>
+        <div class="table-container">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3>Staff Details</h3>
+            </div>
+            <!-- Buttons aligned to the right -->
+            <div class="d-flex ms-auto gap-2 mb-3" style="width: 40%; justify-content: end;">
+                <button class="btn btn-success flex-grow-1" data-bs-toggle="modal" data-bs-target="#staff-modal"
+                        data-action="add">New
+                </button>
+                <button class="btn btn-primary flex-grow-1" data-bs-toggle="modal" data-bs-target="#updateStaff-modal"
+                        data-action="update">Update
+                </button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-dark table-bordered text-center mb-0">
+                    <thead>
+                    <tr>
+                        <th>Staff Id</th>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Dob</th>
+                        <th>Joined Date</th>
+                        <th>Address</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="staff-detail-table">
+                    <!-- Table rows will be inserted here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--new staff modal -->
+        <div id="staff-modal" class="modal fade" tabindex="-1" aria-hidden="true" style="color: #e8f5e9">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background-color: #2b2b2b;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staffTittle">Add Staff</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                style="filter: invert(1);"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <form id="staff-form">
+                            <!-- Staff name -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="staff-id" class="form-control">
+                                        <label for="staff-id" class="form-label" style="margin-left: 0;">
+                                            Name</label>
+                                    </div>
+                                </div>
+                                <!-- Designation Name -->
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="Designation" class="form-control">
+                                        <label for="Designation" class="form-label" style="margin-left: 0;">
+                                            Designation</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <!-- Category -->
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="gender" class="form-control">
+                                        <label for="gender" class="form-label"
+                                               style="margin-left: 0;">Gender</label>
+                                        <div class="form-notch">
+                                            <div class="form-notch-leading" style="width: 9px;"></div>
+                                            <div class="form-notch-middle" style="width: 68.8px;"></div>
+                                            <div class="form-notch-trailing"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- DOB -->
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="dob" class="form-control">
+                                        <label for="dob" class="form-label" style="margin-left: 0;">DOB
+                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <!-- Joined Date -->
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="joined-date" class="form-control">
+                                        <label for="joined-date" class="form-label" style="margin-left: 0;">joined date</label>
+                                    </div>
+                                </div>
+                                <!-- Address-->
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="address" class="form-control">
+                                        <label for="address" class="form-label" style="margin-left: 0;">address
+                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <!-- Remark -->
+                                <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                    <input type="text" id="role" class="form-control">
+                                    <label for="remark" class="form-label" style="margin-left: 0;">Remark</label>
+                                </div>
+                                <!-- email -->
+                                <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                    <input type="text" id="email" class="form-control">
+                                    <label for="email" class="form-label" style="margin-left: 0;">Emaill</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success" form="vehicleForm" id="save-staff-btn">
+                                    Add Staff
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- update staff modal -->
+        <div id="updateStaff-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background-color: #2b2b2b;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateStaffModalTitle">Update Staff</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                style="filter: invert(1);"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <form id="updateStaffForm">
+                            <!-- Staff name -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="updateStaff-name" class="form-control">
+                                        <label for="updateStaff-name" class="form-label"
+                                               style="margin-left: 0;">Staff name</label>
+                                    </div>
+                                </div>
+                                <!-- Designation-->
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="updateDesignation" class="form-control">
+                                        <label for="updateDesignation" class="form-label" style="margin-left: 0;">Designation
+                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <!-- gender -->
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="update-gender" class="form-control">
+                                        <label for="update-gender" class="form-label" style="margin-left: 0;">Category</label>
+                                        <div class="form-notch">
+                                            <div class="form-notch-leading" style="width: 9px;"></div>
+                                            <div class="form-notch-middle" style="width: 68.8px;"></div>
+                                            <div class="form-notch-trailing"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- DOB-->
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="updateDob" class="form-control">
+                                        <label for="updateDob" class="form-label" style="margin-left: 0;">DOB
+                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <!-- Joined date -->
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="updateJoined-date" class="form-control">
+                                        <label for="updateJoined-date" class="form-label"
+                                               style="margin-left: 0;">Joined Date</label>
+                                    </div>
+                                </div>
+                                <!-- address -->
+                                <div class="col-md-6">
+                                    <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                        <input type="text" id="updateAddress" class="form-control">
+                                        <label for="updateAddress" class="form-label" style="margin-left: 0;">Address
+                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <!-- role -->
+                                <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                    <input type="text" id="updateRole" class="form-control">
+                                    <label for="updateRole" class="form-label" style="margin-left: 0;">Role</label>
+                                </div>
+                                <!-- email -->
+                                <div class="form-outline" data-mdb-input-init="" data-mdb-input-initialized="true">
+                                    <input type="text" id="updateEmail" class="form-control">
+                                    <label for="updateEmail" class="form-label" style="margin-left: 0;">Email</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success" form="vehicleForm"
+                                        id="staffSubmitButtonUpdate">Update Vehicle
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Delete staff modal -->
+        <div class="modal fade" id="staffDeleteModal" tabindex="-1" role="dialog"
+             aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content bg-dark text-white"> <!-- Apply dark theme classes -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmStaffDeleteModalLabel">Confirm Deletion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                style="filter: invert(1);"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this record?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="confirmStaffDeleteNo" class="btn btn-secondary"
+                                data-dismiss="modal">No
+                        </button>
+                        <button type="button" id="confirmStaffDeleteYes" class="btn btn-danger">Yes</button>
                     </div>
                 </div>
             </div>
