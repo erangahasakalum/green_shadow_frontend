@@ -1,21 +1,10 @@
-// add hovered class to selected list item
-let list = document.querySelectorAll(".navigation li");
-
-function activeLink() {
-  list.forEach((item) => {
-    item.classList.remove("hovered");
-  });
-  this.classList.add("hovered");
-}
-
-list.forEach((item) => item.addEventListener("mouseover", activeLink));
-
-// Menu Toggle
-let toggle = document.querySelector(".toggle");
-let navigation = document.querySelector(".navigation");
-let main = document.querySelector(".main");
-
-toggle.onclick = function () {
-  navigation.classList.toggle("active");
-  main.classList.toggle("active");
-};
+$("#vehicle-sec").css({
+    display:"none"
+})
+// Handle the vehicle-click action
+$('#vehicle-click').on('click', function() {
+    // Empty the main content and move the #vehicle-sec into the .main div
+    $('.main').empty();
+    $('#vehicle-sec').appendTo('.main').show();
+    $('#equipment-sec').hide();  // Hide the equipment section when vehicle is clicked
+});
