@@ -533,7 +533,7 @@
                                     </div>
                                     <!-- Initial dropdown with predefined options -->
                                     <div id="initialFieldStaff" class="input-group">
-                                        <select id="filed-staff" class="form-control mt-2">
+                                        <select id="<!--filed-staff-->" class="form-control mt-2">
                                             <option value="">Select Field</option>
                                         </select>
                                     </div>
@@ -1006,7 +1006,7 @@
                                 <div class="col-md-6">
                                     <label for="crop-category" class="form-label">Category</label>
                                     <input type="text" class="form-control" placeholder="Enter crop category"
-                                           id="crop-category"
+                            cccccccccccccccccc               id="crop-category"
                                            required>
                                 </div>
                                 <!-- Season -->
@@ -1049,6 +1049,126 @@
                                 Close
                             </button>
                             <button id="btnSaveCropDetails" type="submit" class="btn btn-success">Save Crop</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--field section-->
+<section id="field-sec">
+    <div class="container mt-4">
+        <!-- Search bar -->
+        <div class="mb-3">
+            <div class="input-group mb-5" style="height: 45px">
+                <input type="text" class="form-control rounded-searchbar" placeholder="Search logs..."
+                       aria-label="Search">
+            </div>
+        </div>
+        <div class="table-container">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3>Field Details</h3>
+            </div>
+            <!-- Buttons aligned to the right -->
+            <div class="d-flex ms-auto gap-2 mb-3" style="width: 40%; justify-content: end;">
+                <button class="btn btn-success flex-grow-1" data-bs-toggle="modal" data-bs-target="#newFieldModal"
+                        data-action="add">New
+                </button>
+                <button class="btn btn-primary flex-grow-1" data-bs-toggle="modal"
+                        data-bs-target="#update-equipment-modal"
+                        data-action="update">Update
+                </button>
+            </div>
+        </div>
+
+        <!--            add field model-->
+        <div class="modal fade" id="newFieldModal" tabindex="-1" aria-labelledby="newCropModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background-color: #2b2b2b; color: white;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" >Add New Crop Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                style="filter: invert(1);"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="fieldForm">
+                            <!-- Field Name -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="fieldName" class="form-label">Field Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter field name" id="fieldName"
+                                           required>
+                                </div>
+                                <!-- field location -->
+                                <div class="col-md-6">
+                                    <label for="fieldLocation" class="form-label">Field Location</label>
+                                    <input type="text" class="form-control" placeholder="Enter field location"
+                                           id="fieldLocation" required>
+                                </div>
+                            </div>
+                            <!-- extentSize -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="field-extentSize" class="form-label">Extend size</label>
+                                    <input type="text" class="form-control" placeholder="Enter field-extentSize"
+                                           id="field-extentSize"
+                                           required>
+                                </div>
+                                <!-- field-image1 -->
+                                <div class="col-md-6">
+                                    <label for="field-image1" class="form-label">Crop Image (URL or File)</label>
+                                    <!--<input type="text" class="form-control" placeholder="Enter image URL" id="cropImage">-->
+                                    <!-- Optionally, if you want to allow file uploads: -->
+                                    <input type="file" class="form-control mt-2" id="field-image1">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+<!--                                field-image2-->
+                                <div class="col-md-3">
+                                    <div class="col-md-6">
+                                        <label for="field-image2" class="form-label">Crop Image (URL or File)</label>
+                                        <!--<input type="text" class="form-control" placeholder="Enter image URL" id="cropImage">-->
+                                        <!-- Optionally, if you want to allow file uploads: -->
+                                        <input type="file" class="form-control mt-2" id="field-image2">
+                                    </div>
+                                    <!-- Initial dropdown with predefined options -->
+                                    <div id="initial-staff-list" class="input-group">
+                                        <select id="add-staff-list" class="form-control mt-2">
+                                            <option value="">Select Field</option>
+                                        </select>
+                                    </div>
+                                    <!-- Container for additional dynamic dropdowns -->
+                                    <div id="additionalStaff" class="mt-2"></div>
+                                </div>
+                                <!-- Initial dropdown with predefined options -->
+                                <div id="initial-crop-list" class="input-group">
+                                    <select id="add-crop-list" class="form-control mt-2">
+                                        <option value="">Select Field</option>
+                                    </select>
+                                </div>
+                                <!-- Container for additional dynamic dropdowns -->
+                                <div id="additional-crop" class="mt-2"></div>
+
+                                <!-- Initial dropdown with predefined options -->
+                                <div id="initialEquipmentField" class="input-group">
+                                    <select id="add-equipmnet" class="form-control mt-2">
+                                        <option value="">Select Field</option>
+                                    </select>
+                                </div>
+                                <!-- Container for additional dynamic dropdowns -->
+                                <div id="additionalEquipment" class="mt-2"></div>
+                            </div>
+                        </form>
+
+                        <div class="modal-footer">
+                            <button id="btnCloseFieldDetails" type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">
+                                Close
+                            </button>
+                            <button id="btnSaveFieldDetails" type="submit" class="btn btn-success">Save Crop</button>
                         </div>
                     </div>
                 </div>

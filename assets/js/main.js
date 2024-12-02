@@ -13,6 +13,7 @@ $('#vehicle-click').on('click', function() {
     $('#staff-sec').hide();  // Hide the equipment section when vehicle is clicked
     $('#equipment-sec').hide();
     $('#crop-sec').hide();
+    $('#field-sec').hide();
 });
 
 // Handle the staff-click action
@@ -23,6 +24,7 @@ $('#staff-click').on('click', function() {
     $('#vehicle-sec').hide();  // Hide the equipment section when vehicle is clicked
     $('#equipment-sec').hide();
     $('#crop-sec').hide();
+    $('#field-sec').hide();
 });
 
 // Handle the equipment-click action
@@ -33,6 +35,7 @@ $('#equipment-click').on('click', function() {
     $('#vehicle-sec').hide();  // Hide the equipment section when vehicle is clicked
     $('#staff-sec').hide();
     $('#crop-sec').hide();
+    $('#field-sec').hide();
 });
 
 // Handle the crop-click action
@@ -43,4 +46,16 @@ $('#crops-click').on('click', function() {
     $('#vehicle-sec').hide();  // Hide the equipment section when vehicle is clicked
     $('#staff-sec').hide();
     $('#equipment-sec').hide();
+    $('#field-sec').hide();
+});
+
+// Handle the field-click action
+$('#fields-click').on('click', function() {
+    // Empty the main content and move the #vehicle-sec into the .main div
+    /* $('.main').empty();*/
+    $('#field-sec').appendTo('.main').show();
+    $('#vehicle-sec').hide();  // Hide the equipment section when vehicle is clicked
+    $('#staff-sec').hide();
+    $('#equipment-sec').hide();
+    $('#crop-sec').hide();
 });
