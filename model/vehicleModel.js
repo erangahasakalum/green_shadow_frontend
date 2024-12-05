@@ -1,34 +1,29 @@
-export default class vehicleModel{
-    constructor(licensePlateNumber,name,category,fuelType,status,remark,memberCode) {
-        this._customer_id = customer_id;
-        this._customer_name = customer_name;
-        this._city = city;
-        this._telephone = telephone;
-        this._licensePlateNumber = licensePlateNumber;
-        this._name = name;
+export default class vehicleModel {
+    constructor(license_plate_number, vehicle_name, category, fuel_type, status, staff_member, remark) {
+        this._license_plate_number = license_plate_number;
+        this._vehicle_name = vehicle_name;
         this._category = category;
-        this._fuelType = fuelType;
+        this._fuel_type = fuel_type;
         this._status = status;
+        this._staff_member = staff_member;
         this._remark = remark;
-        this._memberCode = memberCode;
-
     }
 
 
-    get licensePlateNumber() {
-        return this._licensePlateNumber;
+    get license_plate_number() {
+        return this._license_plate_number;
     }
 
-    set licensePlateNumber(value) {
-        this._licensePlateNumber = value;
+    set license_plate_number(value) {
+        this._license_plate_number = value;
     }
 
-    get name() {
-        return this._name;
+    get vehicle_name() {
+        return this._vehicle_name;
     }
 
-    set name(value) {
-        this._name = value;
+    set vehicle_name(value) {
+        this._vehicle_name = value;
     }
 
     get category() {
@@ -39,12 +34,12 @@ export default class vehicleModel{
         this._category = value;
     }
 
-    get fuelType() {
-        return this._fuelType;
+    get fuel_type() {
+        return this._fuel_type;
     }
 
-    set fuelType(value) {
-        this._fuelType = value;
+    set fuel_type(value) {
+        this._fuel_type = value;
     }
 
     get status() {
@@ -55,51 +50,19 @@ export default class vehicleModel{
         this._status = value;
     }
 
+    get staff_member() {
+        return this._staff_member;
+    }
+
+    set staff_member(value) {
+        this._staff_member = value;
+    }
+
     get remark() {
         return this._remark;
     }
 
     set remark(value) {
         this._remark = value;
-    }
-
-    get memberCode() {
-        return this._memberCode;
-    }
-
-    set memberCode(value) {
-        this._memberCode = value;
-    }
-
-    get customer_id() {
-        return this._customer_id;
-    }
-
-    set customer_id(value) {
-        this._customer_id = value;
-    }
-
-    get customer_name() {
-        return this._customer_name;
-    }
-
-    set customer_name(value) {
-        this._customer_name = value;
-    }
-
-    get city() {
-        return this._city;
-    }
-
-    set city(value) {
-        this._city = value;
-    }
-
-    get telephone() {
-        return this._telephone;
-    }
-
-    set telephone(value) {
-        this._telephone = value;
     }
 }

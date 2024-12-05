@@ -5,6 +5,16 @@ $("#vehicle-sec").css({
 $("#staff-sec").css({
     display:"none"
 })
+
+$("#equipment-sec").css({
+    display:"none"
+})
+$("#crop-sec").css({
+    display:"none"
+})
+$("#field-sec").css({
+    display:"none"
+})
 // Handle the vehicle-click action
 $('#vehicle-click').on('click', function() {
     // Empty the main content and move the #vehicle-sec into the .main div
